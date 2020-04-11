@@ -63,20 +63,26 @@ const Home:React.FunctionComponent = () => {
           <h1>Módulo 1: <span>diseño visual y web</span></h1>
         </div>
         <div className="body-content-center">
-          <ul className="module-tags">
-            <li className="tag">semiótica</li>
-            <li className="tag">color</li>
-            <li className="tag">tipografía</li>
-            <li className="tag">herramientas de software</li>
-          </ul>
-          <ul className="submodule-list">
-            <h2>Lenguaje básico de diseño</h2>
-            <li className="submodule">Proximidad</li>
-            <li className="submodule">Espacio</li>
-            <li className="submodule">Alineación</li>
-            <li className="submodule">Contraste</li>
-            <li className="submodule">Repetición</li>
-          </ul>
+          
+          <div className="module-tags-component">
+            <ul className="module-tags">
+              <li className="tag">semiótica</li>
+              <li className="tag">color</li>
+              <li className="tag">tipografía</li>
+              <li className="tag">herramientas de software</li>
+            </ul>
+          </div>
+
+          <div className="submodule-list-component">
+            <ul className="submodule-list">
+              <h2>Lenguaje básico de diseño</h2>
+              <li className="submodule">Proximidad</li>
+              <li className="submodule">Espacio</li>
+              <li className="submodule">Alineación</li>
+              <li className="submodule">Contraste</li>
+              <li className="submodule">Repetición</li>
+            </ul>
+          </div>
           {/*https://gricel.sfo2.digitaloceanspaces.com/awakelab/puzzle-white-center.svg*/}
         </div>
       </div>

@@ -214,3 +214,145 @@ body{
     }
   }
 }
+
+.module-tags-component{
+  position: fixed;
+  top: 400px;
+  left: 200px;
+  .module-tags{
+    background-color: rgba($white, 0.25);
+    @include clean-list;
+    @include zero-hard;
+    @include animate;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    padding: 10px;
+    opacity: 0.75;
+    max-width: 400px;
+    position: relative;
+    &:before{
+      display: inline-block;
+      width: 0; 
+      height: 0; 
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 20px solid rgba($white, 0.25);
+      content:"";
+      position: absolute;
+      top: -20px;
+      left: calc(50% - 20px);
+    }
+    .tag {
+      @include clean-list;
+      @include zero-hard;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      height: 36px;
+      width: auto;
+      padding-left: 32px;
+      padding-right: 32px;
+      box-sizing: border-box;
+      color: $white;
+      background-color: $color-1;
+      margin: 5px!important;
+      border-radius: 18px;
+      text: {
+        align: center;
+        transform: uppercase;
+      }
+      font: {
+        size: 18px;
+        weight: 600;
+      }
+    }
+  }
+}
+
+.submodule-list-component{
+  position: fixed;
+  top: 400px;
+  right: 200px;
+  .submodule-list{
+    background-color: rgba($white, 0.25);
+    @include clean-list;
+    @include zero-hard;
+    @include animate;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    border-radius: 20px;
+    min-width: 300px;
+    position: relative;
+    padding-top: 48px;
+    &:before{
+      display: inline-block;
+      width: 0; 
+      height: 0; 
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 20px solid $color-2;
+      content:"";
+      position: absolute;
+      top: -20px;
+      left: calc(50% - 20px);
+    }
+    h2 {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      height: 48px;
+      top: 0;
+      box-sizing: border-box;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 20px 20px 0px 0px;
+      @include clean-webkit;
+      @include zero-hard;
+      background-color: $color-2;
+      color: $white;
+      font: {
+        size: 18px;
+        weight: 600;
+      }
+      text: {
+        align: center;
+        transform: uppercase;
+      }
+      @include flex-row-center;
+    }
+    .submodule {
+      @include clean-list;
+      @include zero-hard;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      height: 48px;
+      width: 100%;
+      padding-left: 32px;
+      padding-right: 32px;
+      box-sizing: border-box;
+      color: $color-1;
+      background-color: $white;
+      font: {
+        size: 18px;
+        weight: 600;
+      }
+      &:nth-child(even){
+        background-color: transparent;
+        color: $white;
+      }
+    }
+  }
+}
