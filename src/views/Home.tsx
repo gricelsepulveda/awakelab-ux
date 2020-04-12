@@ -83,7 +83,71 @@ const Home:React.FunctionComponent = () => {
               <li className="submodule">Repetición</li>
             </ul>
           </div>
-          {/*https://gricel.sfo2.digitaloceanspaces.com/awakelab/puzzle-white-center.svg*/}
+          
+          <section className="module-content-list-component">
+            <ul className="module-content-list">
+              <li className="module-content module active">
+                <h2 className="module-title">Diseño visual y web</h2>
+                <button className="module-code">
+                  m<span>1</span>
+                </button>
+                <ul className="submodule-contents"></ul>
+              </li>
+              <li className="module-content submodule active">
+                <h2 className="submodule-title">Diseño de un sitio web</h2>
+                <button className="submodule-code">1</button>
+                <ul className="submodule-contents">
+                  <li className="submodule-content">
+                    <button className="submodule-topic">a</button>
+                  </li>
+                  <li className="submodule-content">
+                    <button className="submodule-topic">b</button>
+                  </li>
+                  <li className="submodule-content">
+                    <button className="submodule-topic">c</button>
+                  </li>
+                  <li className="submodule-content">
+                    <button className="submodule-topic">d</button>
+                  </li>
+                  <li className="submodule-content active">
+                    <button className="submodule-topic">e</button>
+                  </li>
+                </ul>
+              </li>
+              <li className="module-content submodule">
+                <h2 className="submodule-title">Maquetación web</h2>
+                <button className="submodule-code">2</button>
+                <ul className="submodule-contents">
+                  <li className="submodule-content">
+                    <button className="submodule-topic">a</button>
+                  </li>
+                  <li className="submodule-content">
+                    <button className="submodule-topic">b</button>
+                  </li>
+                  <li className="submodule-content active">
+                    <button className="submodule-topic">c</button>
+                  </li>
+                </ul>
+              </li>
+              <li className="module-content submodule">
+                <h2 className="submodule-title">
+                  Diseño <span className="expression">responsive</span>
+                </h2>
+                <button className="submodule-code">3</button>
+                <ul className="submodule-contents">
+                  <li className="submodule-content">
+                    <button className="submodule-topic">a</button>
+                  </li>
+                  <li className="submodule-content">
+                    <button className="submodule-topic">b</button>
+                  </li>
+                  <li className="submodule-content active">
+                    <button className="submodule-topic">c</button>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
         </div>
       </div>
     </>

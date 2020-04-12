@@ -32,6 +32,7 @@ body{
   align-content: center;
   background-color: $black;
   @include shadow;
+  z-index: 10;
   a {
     display: inline-block;
     text-decoration: none;
@@ -186,7 +187,7 @@ body{
   justify-content: flex-start;
   align-content: flex-start;
   align-items: flex-start;
-  padding-top: calc(161px + 80px);
+  padding-top: calc(161px + 140px);
   position: relative;
   .body-content-top{
     width: 100%;
@@ -213,14 +214,19 @@ body{
       }
     }
   }
+  .body-content-center {
+    width: 100%;
+    padding-top: 80px;
+  }
 }
 
 .module-tags-component{
+  display: none;
   position: fixed;
   top: 400px;
   left: 200px;
   .module-tags{
-    background-color: rgba($white, 0.25);
+    background-color: rgba($white, 0.75);
     @include clean-list;
     @include zero-hard;
     @include animate;
@@ -232,7 +238,6 @@ body{
     flex-wrap: wrap;
     border-radius: 20px;
     padding: 10px;
-    opacity: 0.75;
     max-width: 400px;
     position: relative;
     &:before{
@@ -241,7 +246,7 @@ body{
       height: 0; 
       border-left: 20px solid transparent;
       border-right: 20px solid transparent;
-      border-bottom: 20px solid rgba($white, 0.25);
+      border-bottom: 20px solid rgba($white, 0.75);
       content:"";
       position: absolute;
       top: -20px;
@@ -277,11 +282,12 @@ body{
 }
 
 .submodule-list-component{
+  display: none;
   position: fixed;
   top: 400px;
   right: 200px;
   .submodule-list{
-    background-color: rgba($white, 0.25);
+    background-color: rgba($white, 0.75);
     @include clean-list;
     @include zero-hard;
     @include animate;
@@ -306,7 +312,7 @@ body{
       top: -20px;
       left: calc(50% - 20px);
     }
-    h2 {
+    h2{
       width: 100%;
       position: absolute;
       left: 0;
@@ -330,7 +336,7 @@ body{
       }
       @include flex-row-center;
     }
-    .submodule {
+    .submodule{
       @include clean-list;
       @include zero-hard;
       display: flex;
@@ -352,6 +358,197 @@ body{
       &:nth-child(even){
         background-color: transparent;
         color: $white;
+      }
+    }
+  }
+}
+
+.module-content-list-component{
+  width: 100%;
+  .module-content-list{
+    @include clean-list;
+    @include zero-hard;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    .module-content{
+      @include clean-list;
+      @include zero-hard;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      width: 100%;
+      min-height: 200px;
+      position: relative;
+      z-index: 0;
+      &:after{
+        content: "";
+        height: 100%;
+        width: 6px;
+        border-radius: 3px;
+        background-color: $color-2;
+        position: absolute;
+        left: calc(50% - (96px / 2) + 16px);
+        top: 96px;
+        z-index: -1;
+      }
+      .module-title{
+        box-sizing: border-box;
+        width: calc((100% / 2) - 96px);
+        color: $white;
+        padding-right: 60px;
+        text-align: right;
+        font: {
+          size: 42px;
+          weight: 300;
+        }
+        @include animate;
+      }
+      .submodule-title{
+        box-sizing: border-box;
+        padding-right: 90px;
+        text-align: right;
+        width: calc((100% / 2) - 96px);
+        color: $white;
+        font: {
+          size: 21px;
+          weight: 600;
+        }
+        opacity: 0.5;
+        @include animate;
+      }
+      .module-code{
+        box-sizing: border-box;
+        width: 96px;
+        height: 96px;
+        border-radius: 48px;
+        outline: 0;
+        background-color: $color-1;
+        border: 10px solid $color-2;
+        font: {
+          size: 36px;
+          weight: 300;
+        }
+        @include flex-row-center;
+        span {
+          font-weight: 800;
+        }
+      }
+      .submodule-code{
+        box-sizing: border-box;
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+        outline: 0;
+        background-color: $color-1;
+        border: 5px solid $color-2;
+        font: {
+          size: 14px;
+          weight: 800;
+        }
+        color: $color-2;
+        @include flex-row-center;
+      }
+      .submodule-contents{
+        @include clean-list;
+        @include zero-hard;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-content: center;
+        align-items: center;
+        width: calc((100% / 2) - 36px);
+        box-sizing: border-box;
+        padding-left: 80px;
+        margin-top: -10px!important;
+        opacity: 0.5;
+        @include animate;
+        .submodule-content{
+          @include clean-list;
+          @include zero-hard;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-content: center;
+          align-items: center;
+          position: relative;
+          z-index: 1;
+          .submodule-topic{
+            width: 64px;
+            height: 64px;
+            outline: 0;
+            border: 0;
+            box-sizing: border-box;
+            margin-right: -13px;
+            padding-right: 15px;
+            padding-top: 10px;
+            background: {
+              color: transparent;
+              image: url("https://gricel.sfo2.digitaloceanspaces.com/awakelab/puzzle-white-center.svg");
+              position: center;
+              repeat: no-repeat;
+              size: 64px auto;
+            }
+            color: $color-1;
+            font: {
+              size: 18px;
+              weight: 800;
+            }
+          }
+          &:first-of-type{
+            z-index: 0;
+            .submodule-topic{
+              padding-top: 0px;
+              padding-bottom: 10px;
+              margin-top: 18px;
+              background: {
+                image: url("https://gricel.sfo2.digitaloceanspaces.com/awakelab/puzzle-white-left.svg");
+                size: auto 64px;
+              }
+            }
+          }
+          &.active{
+            z-index: 0;
+            .submodule-topic{
+              padding-top: 5px;
+              margin-top: 5px!important;
+              color: $white;
+              background: {
+                image: url("https://gricel.sfo2.digitaloceanspaces.com/awakelab/puzzle-color-right.svg");
+                size: auto 59px;
+              }
+            }
+          }
+        }
+      }
+      &.active{
+        .module-code{
+          background-color: $white;
+          color: $black;
+          @include shadow;
+        }
+        .submodule-title, .submodule-contents {
+          opacity: 1;
+        }
+        .submodule-code{
+          background-color: $white;
+          color: $black;
+          @include shadow;
+        }
+      }
+      &:hover {
+        .submodule-title, .submodule-contents {
+          opacity: 1;
+        }
+      }
+      &:last-of-type{
+        &:after{
+          display: none;
+        }
       }
     }
   }
